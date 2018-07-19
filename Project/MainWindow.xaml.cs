@@ -24,5 +24,35 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void ForgotPasswordClick(object sender, MouseButtonEventArgs e)
+        {
+            LoginPanel.Visibility = Visibility.Hidden;
+        }
+
+        private void ForgotPasswordHover(object sender, MouseEventArgs e)
+        {
+            ForgotPassword.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void ForgotPasswordLeave(object sender, MouseEventArgs e)
+        {
+            ForgotPassword.TextDecorations = null;
+        }
     }
 }
