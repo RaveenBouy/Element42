@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" SnapsToDevicePixels="True">
     <Grid RenderTransformOrigin="0.53,0.513">
-        <Label Content="ELEMENT42" HorizontalAlignment="Left" Height="85" Margin="258,0,0,0" VerticalAlignment="Top" Width="266" FontSize="48" FontFamily="Showcard Gothic"/>
+        <Label Content="ELEMENT42" HorizontalAlignment="Left" Height="65" Margin="258,0,0,0" VerticalAlignment="Top" Width="266" FontSize="48" FontFamily="Showcard Gothic"/>
         <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="510,81,0,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
         <Grid Name="LoginPanel" HorizontalAlignment="Left" Height="239" Margin="510,81,0,0" VerticalAlignment="Top" Width="260">
             <Grid.RowDefinitions>
@@ -16,8 +16,8 @@
             </Grid.RowDefinitions>
             <Label Content="Welcome to ELEMENT42" HorizontalAlignment="Left" Margin="34,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
             <Label Content="Enter your credentials to log into the system&#xA;" HorizontalAlignment="Left" Margin="8,29,0,0" VerticalAlignment="Top" Height="30" Width="245"/>
-            <TextBox HorizontalAlignment="Left" Height="26" Margin="27,78,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="205" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" MaxLength="32" MaxLines="1" BorderThickness="1" ToolTip="Enter your username here" AutomationProperties.HelpText="Username" Background="White" TextChanged="TextBox_TextChanged"/>
-            <TextBox HorizontalAlignment="Left" Height="26" Margin="27,125,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="205" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" Background="White" MaxLines="1" MaxLength="32"/>
+            <TextBox x:Name="UsernameTB" HorizontalAlignment="Left" Height="26" Margin="27,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" MaxLength="32" MaxLines="1" BorderThickness="1" ToolTip="Enter your username here" AutomationProperties.HelpText="Username" Background="White" TextChanged="UsernameTB_Text_Changed" GotFocus="UsernameTB_GotFocus" LostFocus="UsernameTB_LostFocus" MouseEnter="UsernameTB_MouseEnter" MouseLeave="UsernameTB_MouseLeave"/>
+            <TextBox x:Name="PasswordTB" HorizontalAlignment="Left" Height="26" Margin="27,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" Background="White" MaxLines="1" MaxLength="32" GotFocus="PasswordTB_GotFocus" LostFocus="PasswordTB_LostFocus" MouseEnter="PasswordTB_MouseEnter" MouseLeave="PasswordTB_MouseLeave" TextChanged="PasswordTB_TextChanged"/>
             <Button Content="Login" HorizontalAlignment="Left" Margin="144,166,0,0" VerticalAlignment="Top" Width="88" Height="25" Background="{x:Null}" FontWeight="Bold" FontFamily="Segoe UI Black" Tag="LoginBtn" Click="Button_Click" AutomationProperties.Name="LoginBtn"/>
             <CheckBox Content="Remember Me" HorizontalAlignment="Left" Margin="29,171,0,0" VerticalAlignment="Top"/>
             <Grid HorizontalAlignment="Left" Height="239" Margin="510,81,-510,-81" VerticalAlignment="Top" Width="260" Grid.RowSpan="2">
@@ -33,6 +33,17 @@
                 <CheckBox Content="Remember Me" HorizontalAlignment="Left" Margin="29,171,0,0" VerticalAlignment="Top"/>
             </Grid>
             <TextBlock HorizontalAlignment="Left" Margin="87,201,0,0" TextWrapping="Wrap" Text="Forgot Password" VerticalAlignment="Top" MouseLeftButtonDown="ForgotPasswordClick" MouseEnter="ForgotPasswordHover" MouseLeave="ForgotPasswordLeave" Name="ForgotPassword"/>
+            <TextBlock HorizontalAlignment="Left" Margin="235,128,0,0" TextWrapping="Wrap" Text="👀" VerticalAlignment="Top"/>
+            <TextBlock x:Name="UsernameLabel" HorizontalAlignment="Left" Margin="29,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="23" Width="203" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="UsernameLabelHover"/>
+            <TextBlock x:Name="PasswordLabel" HorizontalAlignment="Left" Margin="29,127,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="23" Width="201" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="PasswordLabelHover"/>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="185,81,0,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
+        <Grid x:Name="LoginPanel_Copy" HorizontalAlignment="Left" Height="239" Margin="185,81,0,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="109,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="ForgotPassword_Copy" FontSize="18" Width="43" Height="20"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
         </Grid>
 
     </Grid>
