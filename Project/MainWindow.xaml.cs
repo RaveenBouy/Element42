@@ -22,11 +22,12 @@ namespace Project
     {
         string userName = "";
         string password = "";
-        int usernameLabelHover = 0;
+        string passwordDummy = "";
 
         public MainWindow()
         {
             InitializeComponent();
+            ShowPasswordLabel.Visibility = Visibility.Hidden;
         }
 
         private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -64,7 +65,6 @@ namespace Project
         private void UsernameLabelHover(object sender, MouseEventArgs e)
         {
             UsernameLabel.Visibility = Visibility.Hidden;
-            usernameLabelHover = 1;
         }
 
         private void UsernameTB_Text_Changed(object sender, TextChangedEventArgs e)
@@ -131,9 +131,31 @@ namespace Project
             }
         }
 
-        private void PasswordTB_TextChanged(object sender, TextChangedEventArgs e)
+        private void PasswordTB_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            password = PasswordTB.Text;
+            if (PasswordTB.Password != "")
+            {
+                password = PasswordTB.Password;
+            }
+        }
+
+        //ShowPasswordIcon
+
+        private void ShowPassword_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ShowPasswordLabel.Text = password;
+            ShowPasswordLabel.Visibility = Visibility.Visible;
+            PasswordTB.Password = passwordDummy;
+            PasswordTB.IsEnabled = false;
+        }
+
+        private void ShowPassword_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ShowPasswordLabel.Text = "";
+            ShowPasswordLabel.Visibility = Visibility.Hidden;
+            PasswordTB.Password = password;
+            LoginButton.Focus();
+            PasswordTB.IsEnabled = true;
         }
     }
 }
