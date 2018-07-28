@@ -47,7 +47,9 @@ namespace Project
 
         private void ForgotPasswordClick(object sender, MouseButtonEventArgs e)
         {
-            LoginPanel.Visibility = Visibility.Hidden;
+            LoginPanel.Visibility           = Visibility.Hidden;
+            PasswordRecoveryP1.Margin       = new Thickness(510,81,0,0);
+            PasswordRecoveryP1.Visibility   = Visibility.Visible;
         }
 
         private void ForgotPasswordHover(object sender, MouseEventArgs e)
@@ -151,11 +153,44 @@ namespace Project
 
         private void ShowPassword_MouseLeave(object sender, MouseEventArgs e)
         {
-            ShowPasswordLabel.Text = "";
+            ShowPasswordLabel.Text  = "";
             ShowPasswordLabel.Visibility = Visibility.Hidden;
             PasswordTB.Password = password;
             LoginButton.Focus();
             PasswordTB.IsEnabled = true;
+        }
+
+        private void PR1SubmitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PasswordRecoveryP1.Visibility   = Visibility.Hidden;
+            PasswordRecoveryP2.Margin       = new Thickness(510, 81, 0, 0);
+            PasswordRecoveryP2.Visibility   = Visibility.Visible;
+        }
+
+        private void BackBtn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BackBtn1.TextDecorations = TextDecorations.Underline;
+            BackBtn2.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void BackBtn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BackBtn1.TextDecorations = null;
+            BackBtn2.TextDecorations = null;
+        }
+
+        private void BackBtn_Click(object sender, MouseButtonEventArgs e)
+        {
+            PasswordRecoveryP1.Visibility   = Visibility.Hidden;
+            PasswordRecoveryP2.Visibility   = Visibility.Hidden;
+            LoginPanel.Visibility           = Visibility.Visible;
+
+            string ghello = "SEND ME BOBZ";
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(ghello);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            Console.WriteLine(hash);
+            
         }
     }
 }

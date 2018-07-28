@@ -25,15 +25,31 @@
             <TextBlock x:Name="UsernameLabel" HorizontalAlignment="Left" Margin="34,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="23" Width="194" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="UsernameLabelHover"/>
             <PasswordBox x:Name="PasswordTB" HorizontalAlignment="Left" Margin="29,126,0,0" VerticalAlignment="Top" Width="203" Height="24" GotFocus="PasswordTB_GotFocus" LostFocus="PasswordTB_LostFocus" MouseEnter="PasswordTB_MouseEnter" MouseLeave="PasswordTB_MouseLeave" PasswordChanged="PasswordTB_PasswordChanged" HorizontalContentAlignment="Center" MaxLength="27"/>
             <TextBlock x:Name="PasswordLabel" HorizontalAlignment="Left" Margin="34,127,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="23" Width="194" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="PasswordLabelHover"/>
+            <TextBlock x:Name="ShowPassword_Copy" HorizontalAlignment="Left" Margin="8,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources/Icons/icon_User.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock x:Name="ShowPassword_Copy1" HorizontalAlignment="Left" Margin="8,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources/Icons/icon_Key.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock x:Name="ShowPassword_Copy2" HorizontalAlignment="Left" Margin="178,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="Resources/Icons/icon_FPassword1.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <Label Content="                 test" HorizontalAlignment="Left" Margin="63,95,0,0" Height="27" Width="159" VerticalAlignment="Top" Foreground="Red"/>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="835,80,-303,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
-        <Grid x:Name="LoginPanel_Copy" HorizontalAlignment="Left" Height="239" Margin="835,80,-303,0" VerticalAlignment="Top" Width="260">
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="859,-103,-327,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
+        <Grid x:Name="PasswordRecoveryP1" HorizontalAlignment="Left" Height="239" Margin="860,-103,-328,0" VerticalAlignment="Top" Width="260">
             <Grid.RowDefinitions>
                 <RowDefinition Height="229*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <Label Content="         Incorrect Email" HorizontalAlignment="Left" Margin="54,116,0,0" Height="27" Width="161" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="109,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="ForgotPassword_Copy" FontSize="18" Width="43" Height="20"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
+            <Label Content="         Invalid Email" HorizontalAlignment="Left" Margin="63,116,0,0" Height="27" Width="161" VerticalAlignment="Top" Foreground="Red"/>
+            <TextBlock HorizontalAlignment="Left" Margin="108,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="BackBtn1" FontSize="18" Width="43" Height="20" MouseEnter="BackBtn_MouseEnter" MouseLeave="BackBtn_MouseLeave" MouseLeftButtonDown="BackBtn_Click"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="31,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" RenderTransformOrigin="0.5,0.5">
                 <TextBox.RenderTransform>
                     <TransformGroup>
@@ -45,10 +61,32 @@
                 </TextBox.RenderTransform>
             </TextBox>
             <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
-            <Button Content="Submit" HorizontalAlignment="Left" Margin="92,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.053,0.55" Background="White" FontWeight="Bold"/>
+            <Button x:Name="PR1SubmitBtn" Content="Submit" HorizontalAlignment="Left" Margin="92,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.053,0.55" Background="White" FontWeight="Bold" Click="PR1SubmitBtn_Click"/>
+            <Label Content="Please enter your Email below which is &#xA; associated to the username provided." HorizontalAlignment="Left" Margin="25,47,0,0" VerticalAlignment="Top" Height="48" Width="217"/>
         </Grid>
         <TextBlock x:Name="ShowPasswordLabel" HorizontalAlignment="Left" Margin="540,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="23" TextAlignment="Center"/>
-        <Label Content="Please enter your Email below which is &#xD;&#xA; associated to the username provided." HorizontalAlignment="Left" Margin="860,128,-285,0" VerticalAlignment="Top" Height="48" Width="217"/>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="859,159,-327,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
+        <Grid x:Name="PasswordRecoveryP2" HorizontalAlignment="Left" Height="239" Margin="859,159,-327,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="108,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="BackBtn2" FontSize="18" Width="43" Height="20" MouseEnter="BackBtn_MouseEnter" MouseLeave="BackBtn_MouseLeave" MouseLeftButtonDown="BackBtn_Click"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+            <Grid HorizontalAlignment="Left" Height="24" Margin="66,49,0,0" VerticalAlignment="Top" Width="137" Background="#FFFDF0F0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="34*"/>
+                    <ColumnDefinition Width="103*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="ShowPassword_Copy4" HorizontalAlignment="Left" Margin="1,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="23" RenderTransformOrigin="-7.896,-8.042" Height="21">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="Resources/Icons/icon_Cancel.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="29,0,0,0" TextWrapping="Wrap" Text="Email Not Sent" VerticalAlignment="Top" Width="108" FontWeight="Bold" FontFamily="Bauhaus 93" FontSize="16" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Label Content="Sample Text Sample Text Sample Text &#xA;Sample Text Sample Text Sample Text " HorizontalAlignment="Left" Margin="24,89,0,0" VerticalAlignment="Top" Height="48" Width="217"/>
+        </Grid>
 
     </Grid>
 </Window>
