@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:Project"
         xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System" x:Class="Project.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" SnapsToDevicePixels="True">
+        Title="MainWindow" Height="450" Width="800" SnapsToDevicePixels="True"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
     <Grid RenderTransformOrigin="0.53,0.513">
         <Label Content="ELEMENT42" HorizontalAlignment="Left" Height="65" Margin="258,0,0,0" VerticalAlignment="Top" Width="266" FontSize="48" FontFamily="Showcard Gothic"/>
         <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="510,81,0,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
@@ -17,12 +26,11 @@
             </Grid.RowDefinitions>
             <Label Content="Welcome to ELEMENT42" HorizontalAlignment="Left" Margin="34,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
             <Label Content="Enter your credentials to log into the system&#xA;" HorizontalAlignment="Left" Margin="8,29,0,0" VerticalAlignment="Top" Height="30" Width="245"/>
-            <TextBox x:Name="UsernameTB" HorizontalAlignment="Left" Height="26" Margin="29,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" MaxLength="32" MaxLines="1" BorderThickness="1" ToolTip="Enter your username here" AutomationProperties.HelpText="Username" Background="White" TextChanged="UsernameTB_Text_Changed" GotFocus="UsernameTB_GotFocus" LostFocus="UsernameTB_LostFocus" MouseEnter="UsernameTB_MouseEnter" MouseLeave="UsernameTB_MouseLeave"/>
-            <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="144,166,0,0" VerticalAlignment="Top" Width="88" Height="25" Background="{x:Null}" FontWeight="Bold" FontFamily="Segoe UI Black" Tag="LoginBtn" Click="Button_Click" AutomationProperties.Name="LoginBtn"/>
+            <TextBox x:Name="UsernameTB" HorizontalAlignment="Left" Height="26" Margin="29,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" MaxLength="32" MaxLines="1" BorderThickness="0,0,0,1" ToolTip="Enter your username here" TextChanged="UsernameTB_Text_Changed" GotFocus="UsernameTB_GotFocus" LostFocus="UsernameTB_LostFocus" MouseEnter="UsernameTB_MouseEnter" MouseLeave="UsernameTB_MouseLeave"/>
             <CheckBox Content="Remember Me" HorizontalAlignment="Left" Margin="29,171,0,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="87,201,0,0" TextWrapping="Wrap" Text="Forgot Password" VerticalAlignment="Top" MouseLeftButtonDown="ForgotPasswordClick" MouseEnter="ForgotPasswordHover" MouseLeave="ForgotPasswordLeave" x:Name="ForgotPassword"/>
             <TextBlock x:Name="ShowPassword" HorizontalAlignment="Left" Margin="235,128,0,0" TextWrapping="Wrap" Text="👀" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave"/>
-            <TextBlock x:Name="UsernameLabel" HorizontalAlignment="Left" Margin="34,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="23" Width="194" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="UsernameLabelHover"/>
+            <TextBlock x:Name="UsernameLabel" HorizontalAlignment="Left" Margin="43,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="23" Width="185" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="UsernameLabelHover"/>
             <PasswordBox x:Name="PasswordTB" HorizontalAlignment="Left" Margin="29,126,0,0" VerticalAlignment="Top" Width="203" Height="24" GotFocus="PasswordTB_GotFocus" LostFocus="PasswordTB_LostFocus" MouseEnter="PasswordTB_MouseEnter" MouseLeave="PasswordTB_MouseLeave" PasswordChanged="PasswordTB_PasswordChanged" HorizontalContentAlignment="Center" MaxLength="27"/>
             <TextBlock x:Name="PasswordLabel" HorizontalAlignment="Left" Margin="34,127,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="23" Width="194" TextAlignment="Center" FontSize="16" FontWeight="Bold" MouseEnter="PasswordLabelHover"/>
             <TextBlock x:Name="ShowPassword_Copy" HorizontalAlignment="Left" Margin="8,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
@@ -35,12 +43,13 @@
                     <ImageBrush ImageSource="Resources/Icons/icon_Key.png"/>
                 </TextBlock.Background>
             </TextBlock>
-            <TextBlock x:Name="ShowPassword_Copy2" HorizontalAlignment="Left" Margin="178,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
+            <TextBlock x:Name="ShowPassword_Copy2" HorizontalAlignment="Left" Margin="182,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MouseEnter="ShowPassword_MouseEnter" MouseLeave="ShowPassword_MouseLeave" Width="16">
                 <TextBlock.Background>
                     <ImageBrush ImageSource="Resources/Icons/icon_FPassword1.png"/>
                 </TextBlock.Background>
             </TextBlock>
-            <Label Content="                 test" HorizontalAlignment="Left" Margin="63,95,0,0" Height="27" Width="159" VerticalAlignment="Top" Foreground="Red"/>
+            <Label Content="Invalid Username/Password" HorizontalAlignment="Left" Margin="54,53,0,0" Height="27" Width="175" VerticalAlignment="Top" Foreground="Red"/>
+            <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="153,168,0,0" VerticalAlignment="Top" Width="76" Click="LoginButton_Click" Height="26" Background="#FF020000" BorderBrush="White"/>
         </Grid>
         <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="859,-103,-327,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
         <Grid x:Name="PasswordRecoveryP1" HorizontalAlignment="Left" Height="239" Margin="860,-103,-328,0" VerticalAlignment="Top" Width="260">
@@ -68,12 +77,12 @@
         <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="859,159,-327,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
         <Grid x:Name="PasswordRecoveryP2" HorizontalAlignment="Left" Height="239" Margin="859,159,-327,0" VerticalAlignment="Top" Width="260">
             <Grid.RowDefinitions>
-                <RowDefinition Height="229*"/>
                 <RowDefinition Height="10*"/>
+                <RowDefinition Height="229*"/>
             </Grid.RowDefinitions>
-            <TextBlock HorizontalAlignment="Left" Margin="108,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="BackBtn2" FontSize="18" Width="43" Height="20" MouseEnter="BackBtn_MouseEnter" MouseLeave="BackBtn_MouseLeave" MouseLeftButtonDown="BackBtn_Click"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
-            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
-            <Grid HorizontalAlignment="Left" Height="24" Margin="66,49,0,0" VerticalAlignment="Top" Width="137" Background="#FFFDF0F0">
+            <TextBlock HorizontalAlignment="Left" Margin="108,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="BackBtn2" FontSize="18" Width="43" Height="20" MouseEnter="BackBtn_MouseEnter" MouseLeave="BackBtn_MouseLeave" MouseLeftButtonDown="BackBtn_Click" Grid.Row="1"><Run FontWeight="Bold" FontSize="16" Text="←"/><Run FontSize="14" Text="Back"/></TextBlock>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold" Grid.Row="1"/>
+            <Grid HorizontalAlignment="Left" Height="24" Margin="66,49,0,0" VerticalAlignment="Top" Width="137" Background="#FFFDF0F0" Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="34*"/>
                     <ColumnDefinition Width="103*"/>
@@ -85,8 +94,78 @@
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Left" Margin="29,0,0,0" TextWrapping="Wrap" Text="Email Not Sent" VerticalAlignment="Top" Width="108" FontWeight="Bold" FontFamily="Bauhaus 93" FontSize="16" Grid.ColumnSpan="2"/>
             </Grid>
-            <Label Content="Sample Text Sample Text Sample Text &#xA;Sample Text Sample Text Sample Text " HorizontalAlignment="Left" Margin="24,89,0,0" VerticalAlignment="Top" Height="48" Width="217"/>
+            <Label Content="Sample Text Sample Text Sample Text &#xA;Sample Text Sample Text Sample Text " HorizontalAlignment="Left" Margin="24,89,0,0" VerticalAlignment="Top" Height="48" Width="217" Grid.Row="1"/>
         </Grid>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="1154,159,-622,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
+        <Grid x:Name="PasswordRecoveryP2_Copy" HorizontalAlignment="Left" Height="239" Margin="1154,159,-622,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Please enter the code below that was &#xD;&#xA;        sent to your email address." HorizontalAlignment="Left" Margin="25,47,0,0" VerticalAlignment="Top" Height="48" Width="217"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="68,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Enter Code sent to your Email Address"/>
+            <TextBlock HorizontalAlignment="Left" Margin="43,152,0,0" TextWrapping="Wrap" Text="Attempts exceeded! Try again later." VerticalAlignment="Top" Width="217" Foreground="Red"/>
+            <Button Content="Submit" HorizontalAlignment="Left" Margin="90,123,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" Background="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="25,170,0,0" TextWrapping="Wrap" Text="You'll be redirected to the main window." VerticalAlignment="Top" Width="217"/>
+        </Grid>
+        <Label Content="1" HorizontalAlignment="Left" Margin="824,-80,-53,0" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-1.286,2.654"/>
+        <Label Content="2" HorizontalAlignment="Left" Margin="824,173,-53,0" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-1.286,2.654"/>
+        <Label Content="3" HorizontalAlignment="Left" Margin="1128,173,-357,0" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-1.286,2.654"/>
+        <Grid x:Name="PasswordRecoveryP2_Copy1" HorizontalAlignment="Left" Height="239" Margin="1154,159,-622,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Please enter the code below that was &#xA;        sent to your email address." HorizontalAlignment="Left" Margin="25,47,0,0" VerticalAlignment="Top" Height="48" Width="217"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="68,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Enter Code sent to your Email Address"/>
+            <TextBlock HorizontalAlignment="Left" Margin="43,152,0,0" TextWrapping="Wrap" Text="Attempts exceeded! Try again later." VerticalAlignment="Top" Width="217" Foreground="Red"/>
+            <Button Content="Submit" HorizontalAlignment="Left" Margin="90,123,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" Background="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="25,170,0,0" TextWrapping="Wrap" Text="You'll be redirected to the main window." VerticalAlignment="Top" Width="217"/>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="239" Margin="1154,-103,-622,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5" CornerRadius="5"/>
+        <Grid x:Name="PasswordRecoveryP2_Copy2" HorizontalAlignment="Left" Height="239" Margin="1154,-103,-622,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="PasswordRecoveryP2_Copy3" HorizontalAlignment="Left" Height="239" Margin="1154,-103,-622,0" VerticalAlignment="Top" Width="260">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="229*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Label Content="           Password Recovery" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="240" FontSize="16" FontWeight="Bold"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="32,64,0,0" VerticalAlignment="Top" Width="199" Height="26"/>
+            <TextBlock HorizontalAlignment="Left" Margin="45,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" FontWeight="Bold" Text="       New Password" Height="24"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="32,97,0,0" VerticalAlignment="Top" Width="199" Height="26"/>
+            <TextBlock HorizontalAlignment="Left" Margin="45,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" FontWeight="Bold" Text="    Confirm Password" Height="24"/>
+            <Label Content="Password Doesn't match!" HorizontalAlignment="Left" Margin="57,121,0,0" Height="23" Width="161" VerticalAlignment="Top" Foreground="Red"/>
+            <Button Content="Create Password" HorizontalAlignment="Left" Margin="55,151,0,0" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.5,0.5" Background="White" FontWeight="Bold" UseLayoutRounding="False">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="X" HorizontalAlignment="Left" Margin="187,151,0,0" VerticalAlignment="Top" Width="21" RenderTransformOrigin="0.053,0.55" Background="White" FontWeight="Bold"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="91,188,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
+        <Label Content="4" HorizontalAlignment="Left" Margin="1124,-80,-357,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="-1.286,2.654"/>
+        <DatePicker HorizontalAlignment="Left" Margin="376,207,0,0" VerticalAlignment="Top"/>
+        <TabControl HorizontalAlignment="Left" Height="147" Margin="208,126,0,0" VerticalAlignment="Top" Width="126">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

@@ -192,5 +192,10 @@ namespace Project
             Console.WriteLine(hash);
             
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
